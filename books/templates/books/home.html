@@ -1,0 +1,53 @@
+
+<style> 
+
+ #book {
+  display: flex;
+  flex-direction: row;
+  gap:10px;
+  border : 1px solid black;
+  padding:10px;
+  border-radius: 10px;
+  min-height: 200px;
+ }
+ #book img {
+ 
+ }
+ #book-item:hover {
+  border:2px solid gray;
+  transition: 1s;
+ }
+
+ #book-name {}
+  </style>
+{% extends "books/base.html" %}
+
+{% block content %}
+  <section id="hero">
+    <div
+    id = "book"
+    >
+   
+    {% if books  %} 
+    
+    {% for book in books %}
+    <div
+    id = "book-item"
+    >
+    <img src="{{ book.image.url }}" alt="{{ book.name }}" >
+      <p
+      id="#book-name"
+      >
+        {{book.name}}
+      </p>
+    </div>
+    {% endfor %}
+
+    
+  </div>
+    
+    {% endif %}
+    <p>Discover the beauty of swimming in one of our pools in Rome.</p>
+    <a href="/pools/pools" class="btn">Discover our pools</a>
+  </section>
+{% endblock %}
