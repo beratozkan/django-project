@@ -24,6 +24,7 @@
 
 {% block content %}
   <section id="hero">
+
     <div
     id = "book"
     >
@@ -31,6 +32,7 @@
     {% if books  %} 
     
     {% for book in books %}
+    <a href="/book/{{ book.id }}">
     <div
     id = "book-item"
     >
@@ -41,13 +43,14 @@
         {{book.name}}
       </p>
     </div>
+    </a>
     {% endfor %}
 
     
   </div>
     
     {% endif %}
-    <p>Discover the beauty of swimming in one of our pools in Rome.</p>
+    
     <a href="/pools/pools" class="btn">Discover our pools</a>
   </section>
 {% endblock %}
