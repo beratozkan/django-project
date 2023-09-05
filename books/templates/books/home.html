@@ -27,6 +27,13 @@
 
     <div
     id = "book"
+    style="justify-content: center;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding:20px
+    "
     >
    
     {% if books  %} 
@@ -35,12 +42,21 @@
     <a href="/book/{{ book.id }}">
     <div
     id = "book-item"
+    style="align-items: center;
+    display: flex;
+    flex-direction: column;
+    "
     >
-    <img src="{{ book.image.url }}" alt="{{ book.name }}" >
+    <img src="../static/book_images/{{ book.name}}.jpg" alt="{{ book.name }}" 
+      style="width: 300px;height:400px;"
+    >
       <p
       id="#book-name"
+      style="text-align: center;color: #000;
+        font-size: 20px;
+      "
       >
-        {{book.name}}
+        {{book.name.capitalize }}
       </p>
     </div>
     </a>
@@ -51,6 +67,6 @@
     
     {% endif %}
     
-    <a href="/pools/pools" class="btn">Discover our pools</a>
+   
   </section>
 {% endblock %}

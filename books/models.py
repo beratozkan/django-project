@@ -6,10 +6,10 @@ class Book(models.Model):
     pageSize = models.IntegerField(max_length=100, default='', blank=True)
     image = models.ImageField(null=True, blank=True),
     price = models.IntegerField(max_length=100, default='', blank=True)
-    ISBN = models.IntegerField(max_length=100, default='', blank=True)
+   
     author_id = models.IntegerField()
     def __str__(self):
-        return self.name
+        return self.names
    
     
 class Author(models.Model):

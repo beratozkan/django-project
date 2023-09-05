@@ -1,0 +1,39 @@
+{% extends "books/base.html" %}
+
+{% block content %}
+  <section id="piscine">
+      <h2>All Books</h2>
+      <ul
+        style="justify-content: center
+        ;"
+      >
+        {% if books  %} 
+        {% for book in books %}
+          <li>
+            <a href="/book/{{ book.id }}">
+              <div
+              id = "book-item"
+              style="align-items: center;
+              display: flex;
+              flex-direction: column;
+              "
+              >
+              <img src="../static/book_images/{{ book.name}}.jpg" alt="{{ book.name }}" 
+                style="width: 300px;height:400px;"
+              >
+                <p
+                id="#book-name"
+                style="text-align: center;color: #000;
+                  font-size: 20px;
+                "
+                >
+                  {{book.name.capitalize }}
+                </p>
+              </div>
+              </a>
+          </li>
+        {% endfor %}
+        {% endif %}
+      </ul>
+    </section>
+{% endblock %}

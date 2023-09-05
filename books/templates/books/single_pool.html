@@ -10,33 +10,45 @@
     >
     <div
       style = "display: flex;
-        flex:2
+        flex:2;
+        flex-direction: column;
+        padding: 20px;
       "
     >
 
 
-    <img src="{{ pool.image.url }}" alt="{{ pool.name }}" >
-    <p>{{ pool.abstract }}</p>
+    <img src="../static/book_images/{{ book.name}}.jpg" alt="{{ book.name }}" 
+    style="width: 150px;height:200px;"
+  >
+  <h1>
+    {{ book.name }}
+    
+    </h1>
+    <p> abstract: {{ book.abstract }}</p>
     <p>
-      {{ book.name }}<br />
-      {{ book.pageSize }}
+      
+     
+      page size : {{ book.pageSize }}
     </p>
   </div>
   <div
   class ='Author'
   style="display: flex;
     flex:1;
-    flex-direction: column;"
+    flex-direction: column;
+      padding: 20px;
+    "
+
   >
   <div
     style="
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 200px;
       border: 1px solid black;"
     
   >
-    <img src="{{ author.image }}" alt="" 
-      
+    <img src="../static/author_images/{{author.image}}" alt="" 
+      style="width: 150px;height:200px;"
     >
 
   </div>
@@ -49,6 +61,6 @@
     
 
   </div>
-  <a href="/pools/pools" class="btn">Back to all the pools</a>
+  <a href="/" class="btn">Back to home page</a>
     </section>
 {% endblock %}

@@ -3,16 +3,26 @@ from django.shortcuts import render
 # Create your views here.
 from django.shortcuts import render
 from .models import Book, Author
+def contact(request):
+    return render(request, 'books/contact.html')
+def about(request):
+    return render(request, 'books/about.html')
+
 def home(request):
     ctx  ={
-        'books':Book.objects.all(),
+        'books':Book.objects.all()[:5],
         'authors':Author.objects.all(),
     }
     
     return render(request, 'books/home.html',ctx)
-def pools(request):
-   
-    return render(request, 'books/pools.html',)
+def AllBooks(request):
+    ctx  ={
+        'books':Book.objects.all(),
+        
+    }
+    return render(request, 'books/allbooks.html',
+                    ctx
+                  )
 def single_pool(request, pk):
 
     ctx = {'book' : Book.objects.get(id=pk),
